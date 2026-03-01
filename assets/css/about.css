@@ -1,0 +1,265 @@
+body {
+    background: #FAF3E0; /* تعيين لون خلفية الصفحة */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* جعل الصفحة تأخذ كامل ارتفاع الشاشة */
+
+}
+/* ضبط تصميم الهيدر */
+.header {
+    position: fixed; /* يثبت الهيدر في أعلى الصفحة */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fdf8e3; /* لون الخلفية */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+    z-index: 1000;
+}
+
+/* تنسيق الشعار */
+.logo img {
+    max-height: 50px; /* ضبط حجم الشعار */
+    object-fit: contain;
+}
+
+/* ترتيب الروابط أفقيًا */
+.navbar-list {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* مسافة بين العناصر */
+    margin-right: 10px;
+    padding-right: 50px;
+    justify-content: flex-start; /* تحريك الروابط باتجاه الشعار */
+
+}
+
+/* تنسيق الروابط */
+.navbar-link {
+    text-decoration: none;
+    font-size: 18px;
+    color: #165A4A; /* لون النص */
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* خط تحت الروابط عند تمرير الماوس */
+.navbar-link:hover {
+    color: #C9A14A; /* تغيير لون النص عند التمرير */
+}
+
+.navbar-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background-color: #C9A14A; /* لون الخط */
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-link:hover::after {
+    transform: scaleX(1);
+}
+
+/* فاصل خفيف بين الهيدر والمحتوى */
+body {
+    padding-top: 80px; /* يضمن أن المحتوى لا يكون تحت الهيدر المثبت */
+}
+
+
+.top-bar {
+    display: flex; /* جعل الأيقونات في صف واحد */
+    gap: 15px; /* مسافة بين الأيقونات */
+    margin-bottom: 20px; /* إضافة مسافة بين شريط الأيقونات والمحتوى */
+}
+
+
+
+.icon {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 100px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer; /* تغيير المؤشر عند التحويل على الأيقونات */
+    transition: 0.3s; /* تأثير انتقالي سلس عند التفاعل */
+}
+
+.icon:hover {
+    opacity: 0.7; /* تقليل الشفافية عند تمرير الفأرة */
+}
+
+
+.container {
+    display: none;
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.2);
+    width: 600px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    border: 4px solid #165A4A;
+}
+
+.text-section {
+    padding: 30px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-section h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.text-section p {
+    margin: 5px 0;
+    color: gray;
+}
+
+
+.image-and-text {
+  display: flex; 
+  justify-content: space-between; /* توزيع العناصر على السطر */
+  align-items: center; /* توسيط العناصر عموديًا */
+  gap: 10px; /* ترك مسافة 10px بين العناصر */
+  width: 100%; /* التأكد من أن القسم يأخذ عرض الصفحة */
+}
+
+.image-section {
+  width: 50%; /* جعل الصورة الرئيسية تأخذ نصف العرض */
+  height: 250px; /* ضبط ارتفاع الصورة */
+  margin-left: 10px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 2px; /* تنعيم الحواف */
+}
+
+.images-gallery {
+  display: flex; 
+  gap: 10px; /* مسافة بين الصور */
+  flex: 1; /* السماح له بأخذ المساحة المتبقية */
+}
+
+.image-gallery-item {
+  width: 50%; /* كل صورة تأخذ نصف عرض `images-gallery` */
+  height: 250px; /* توحيد الارتفاع مع الصورة الرئيسية */
+  background-size: cover;
+  background-position: center;
+  border-radius: 2px; /* تنعيم الحواف */
+}
+
+/*-----------------------------------*\
+  #footer
+\*-----------------------------------*/
+
+.footer {
+    background-color: #165A4A;
+    padding: 4rem 2rem 1rem 2rem;
+    margin-top: 4rem;
+    height: 100%;
+    position: relative;
+
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 200px;
+    margin-bottom: 3rem;
+  }
+  
+  .footer-section h3 {
+    color:  #FAF3E0;
+    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+  }
+  
+  .footer-section ul {
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 0.8rem;
+  }
+  
+  .footer-section a {
+    color:  #FAF3E0 ;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section a:hover {
+    color:  #C9A14A ;
+  }
+  .footer-section p  {
+    color: #FAF3E0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-section p:hover {
+    color: #C9A14A;
+  }
+  .contact-info p {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .contact-info i {
+    color: #FAF3E0;
+    width: 20px;
+  }
+  
+  .social-links {
+    display: flex;
+    gap: 60px;
+  }
+  
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .social-link:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+  }
+  
+  .social-link i {
+    font-size: 1.2rem;
+  }
+  
+  .footer-bottom {
+    color: #FAF3E0;
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  

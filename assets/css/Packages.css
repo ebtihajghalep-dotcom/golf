@@ -1,0 +1,140 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #FAF3E0; 
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 60%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card {
+  width: 100%;
+  height: 85%;
+  margin-top: 40px;
+  background-color:#FAF3E0;
+  border-radius: 10px;
+  border: 1px solid #165A4A; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease, top 0.5s ease;
+}
+/* الحاوية التي تضم الصورة والبطاقات */
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:nth-child(1) {
+  top: 0;
+}
+
+.card:nth-child(2) {
+  top: 120%;
+}
+
+.card:nth-child(3) {
+  top: -120%;
+}
+
+
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* يجعل النص والصورة في سطر واحد */
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+  color: #165A4A;
+  padding: 10px;
+  width: 90%; /* لتوفير المساحة بين النص والصورة */
+}
+.card-text {
+  width: 50%; 
+  font-size: 20px;
+  font-weight: bold;
+  text-align: right; /* محاذاة النص لليمين في اللغة العربية */
+}
+
+.card-image {
+  
+  width: 40%; /* تحديد عرض الصورة ليكون ثابتاً للجميع */
+  height: 100%; /* تحديد ارتفاع ثابت لكل الصور */
+  object-fit: cover; /* لتغطية المساحة دون تشويه الصورة */
+  border-radius: 10px;
+  margin-left: 20px; /* ترك مسافة بين النص والصورة */
+}
+.card-image1 {
+  width: 40%; /* تحديد عرض الصورة ليكون ثابتاً للجميع */
+  height: 100%; /* تحديد ارتفاع ثابت لكل الصور */
+  margin-bottom: 0px;
+  margin-left: 50%;
+  object-fit: cover; 
+  border-radius: 15px; 
+}
+.card-image2 {
+  width: 40%; /* تحديد عرض الصورة ليكون ثابتاً للجميع */
+  height: 100%; /* تحديد ارتفاع ثابت لكل الصور */
+  margin-bottom: 2px;
+  margin-left: 65%;
+  object-fit: cover; 
+  border-radius: 15px; 
+}
+.card-image3 {
+  width: 40%; /* تحديد عرض الصورة ليكون ثابتاً للجميع */
+  height: 100%; /* تحديد ارتفاع ثابت لكل الصور */
+  margin-bottom: 2px;
+  margin-left: 65%;
+  object-fit: cover; 
+  border-radius: 15px; 
+}
+.image-container {
+  width: 400px; 
+  display: flex;
+  justify-content: center;
+  overflow: hidden; /* ضمان أن الصور التي تخرج عن الحدود لا تظهر */
+  align-items: center;
+  margin-top: 10px; 
+}
+
+.card-image4 {
+  width: 40%; /* تحديد عرض الصورة ليكون ثابتاً للجميع */
+  height: 90%; /* تحديد ارتفاع ثابت لكل الصور */
+  margin-bottom: 2px;
+  margin-left: 50%;
+  object-fit: cover; 
+  border-radius: 15px; 
+}

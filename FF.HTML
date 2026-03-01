@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Language Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="title">Welcome to Hole In One Resort</h1>
+        <nav>
+            <a href="#home" class="navbar-link"><span id="home">Home</span></a>
+            <a href="#package" class="navbar-link"><span id="packages">Packages</span></a>
+            <a href="./About.html" class="navbar-link"><span id="about">About Us</span></a>
+            <a href="./VIP_Book.html" class="navbar-link"><span id="vip">VIP Book</span></a>
+            <a href="#comments" class="navbar-link"><span id="comments">Comments</span></a>
+        </nav>
+        <select id="languageSwitcher">
+            <option value="en">English</option>
+            <option value="ar">العربية</option>
+            <option value="pt">Português</option>
+        </select>
+    </header>
+    <main>
+        <h2 id="hero_title">Enjoy playing golf on a legendary course!</h2>
+        <p id="hero_text">Discover an unforgettable experience among stunning nature</p>
+        <button id="btn_view_more">View More</button>
+        <h3 id="about_label">Our Story</h3>
+        <p id="about_title">Discover our unique experiences that suit every taste!</p>
+        <h3 id="contact_label">For inquiries</h3>
+        <p id="contact_number">+962 777 674 733</p>
+        <h3 id="comments_title">Your opinion matters to us</h3>
+        <button id="comments_add">Add a Comment</button>
+        <button id="send">Send</button>
+    </main>
+    <footer>
+        <p id="footer_about">Hole In One Resort is your ideal destination for golf enthusiasts...</p>
+        <p id="rights">All rights reserved © Hole In One 2025</p>
+    </footer>
+    <script>
+        const translations = {
+            en: {
+                title: "Welcome to Hole In One Resort",
+                home: "Home",
+                packages: "Packages",
+                about: "About Us",
+                vip: "VIP Book",
+                comments: "Comments",
+                hero_title: "Enjoy playing golf on a legendary course!",
+                hero_text: "Discover an unforgettable experience among stunning nature",
+                btn_view_more: "View More",
+                about_label: "Our Story",
+                about_title: "Discover our unique experiences that suit every taste!",
+                contact_label: "For inquiries",
+                contact_number: "+962 777 674 733",
+                comments_title: "Your opinion matters to us",
+                comments_add: "Add a Comment",
+                send: "Send",
+                footer_about: "Hole In One Resort is your ideal destination for golf enthusiasts...",
+                rights: "All rights reserved © Hole In One 2025"
+            },
+            ar: {
+                title: "مرحبًا بكم في منتجع هول إن ون",
+                home: "الرئيسية",
+                packages: "الباقات",
+                about: "من نحن",
+                vip: "الحجز VIP",
+                comments: "التعليقات",
+                hero_title: "استمتع بلعب الجولف على ملعب أسطوري!",
+                hero_text: "اكتشف تجربة لا تُنسى وسط الطبيعة الخلابة",
+                btn_view_more: "عرض المزيد",
+                about_label: "قصتنا",
+                about_title: "اكتشف تجاربنا الفريدة التي تناسب جميع الأذواق!",
+                contact_label: "للاستفسارات",
+                contact_number: "+962 777 674 733",
+                comments_title: "رأيك يهمنا",
+                comments_add: "أضف تعليق",
+                send: "إرسال",
+                footer_about: "منتجع هول إن ون هو وجهتك المثالية لعشاق الجولف...",
+                rights: "جميع الحقوق محفوظة © هول إن ون 2025"
+            },
+            pt: {
+                title: "Bem-vindo ao Hole In One Resort",
+                home: "Início",
+                packages: "Pacotes",
+                about: "Sobre Nós",
+                vip: "Reserva VIP",
+                comments: "Comentários",
+                hero_title: "Desfrute de jogar golfe em um campo lendário!",
+                hero_text: "Descubra uma experiência inesquecível na natureza deslumbrante",
+                btn_view_more: "Ver Mais",
+                about_label: "Nossa História",
+                about_title: "Descubra nossas experiências únicas para todos os gostos!",
+                contact_label: "Para consultas",
+                contact_number: "+962 777 674 733",
+                comments_title: "Sua opinião é importante para nós",
+                comments_add: "Adicionar Comentário",
+                send: "Enviar",
+                footer_about: "Hole In One Resort é o destino ideal para os amantes de golfe...",
+                rights: "Todos os direitos reservados © Hole In One 2025"
+            }
+        };
+
+        function setLanguage(lang) {
+            localStorage.setItem("selectedLanguage", lang);
+            const translation = translations[lang];
+            for (const key in translation) {
+                if (document.getElementById(key)) {
+                    document.getElementById(key).textContent = translation[key];
+                }
+            }
+        }
+
+        document.getElementById("languageSwitcher").addEventListener("change", function() {
+            setLanguage(this.value);
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const savedLanguage = localStorage.getItem("selectedLanguage") || "en";
+            document.getElementById("languageSwitcher").value = savedLanguage;
+            setLanguage(savedLanguage);
+        });
+    </script>
+</body>
+</html>

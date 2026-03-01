@@ -1,0 +1,283 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #165A4A;
+    direction: rtl;
+}
+
+.background {
+    background-image: url(../images/vip.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transparent-box {
+    background: rgba(255, 255, 255, 0.147); /* إضافة شفافية للخلفية */
+    border: 2px solid #165A4A; /* تأكيد وجود الحدود */
+    border-radius: 10px;
+    position: absolute;
+    padding: 20px;
+    width: 750px; /* تحديد عرض ثابت */
+    max-width: 100%; /* عدم تجاوز عرض الشاشة */
+    max-height: 100%;
+    height: 550px; /* تحديد ارتفاع ثابت */
+    text-align: center;
+    backdrop-filter: blur(15px); /* زيادة التأثير */
+    -webkit-backdrop-filter: blur(15px); /* دعم لمتصفح سفاري */
+    box-sizing: border-box; /* لتشمل الحشو في الحساب */
+    display: flex; /* استخدام flexbox لتوزيع المحتوى */
+    flex-direction: column; /* ترتيب العناصر عموديًا */
+    justify-content: space-between; /* توزيع العناصر بالتساوي داخل الصندوق */
+}
+
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.icon-container {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* المسافة من اليمين */
+    transform: translateY(-50%); /* لجعل الأيقونات في المنتصف عموديًا */
+    display: flex;
+    flex-direction: column; /* ترتيب الأيقونات عموديًا */
+    gap: 10px; /* المسافة بين الأيقونات */
+    z-index: 1; /* التأكد من أن الأيقونات تكون فوق العناصر الأخرى */
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(112, 110, 106); /* لون الحدود الأساسي */
+    border-radius: 8px; /* جعل الزوايا دائرية */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    background-color: transparent;
+    color: hsla(30, 3%, 34%, 1); /* لا يوجد تعبئة */
+}
+
+.icon:hover {
+
+    color: #C9A14A;
+    border: 2px solid #C9A14A;
+}
+
+.input-container {
+    flex: 1; /* يجعل الحقول تتناسب مع المساحة المتاحة */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    margin-right: 80px; /* توفير المساحة للجانب الأيمن (مكان الأيقونات) */
+}
+/* الحقول التي تأخذ العرض بالكامل */
+.input-container input.full-width,
+.input-container textarea.full-width,
+.input-container select.full-width {
+    text-align: left;
+    line-height: 1;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #999;
+    background: transparent;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* الحقول التي تأخذ نصف العرض */
+.input-container .half-width {
+    text-align: left;
+    line-height: 1.8;
+    width: 45%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #999;
+    background: transparent;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* عند النقر على الحقل */
+.input-container input:focus,
+.input-container textarea:focus,
+.input-container select:focus {
+    border-bottom: 2px solid #C9A14A;
+}
+
+/* التأثير عند تمرير الماوس على الحقول */
+.input-container input,
+.input-container select,
+.input-container textarea {
+    transition: border 0.3s ease;
+}
+
+/* تنسيق textarea */
+.input-container textarea {
+    text-align: left;
+    max-width: 100%;
+    resize: none;
+    min-height: 40px; /* جعل الـ textarea أكثر ارتفاعًا */
+}
+
+/* تخصيص الـ select */
+.input-container select {
+    text-align: left;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #999;
+    background: transparent;
+    outline: none;
+}
+
+/* الحقول في سطر واحد */
+.input-container .full-row {
+    text-align: left;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #999;
+    background: transparent;
+    outline: none;
+}
+
+
+button {
+    padding: 10px 20px;
+    background-color: #ffffff00;
+    color: #165A4A;
+    border: 2px solid #165A4A;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 50%;
+    margin-top: 30px; /* مسافة من الحقول */
+    margin-bottom: 10px;
+}
+
+button:hover {
+    color: #C9A14A;
+    border: 2px solid #C9A14A;
+}
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+/*Responsive for larger than 540px screen*/
+@media (max-width: 540px) {
+
+    .transparent-box {
+        margin-top: 60px;
+        width: 95%;
+        padding: 10px;
+        height: auto;}
+
+    h1 {
+        font-size: 24px;}
+
+    .input-container {
+        gap: 10px;}
+
+    .input-container .half-width,
+    .input-container .full-width,
+    .input-container textarea,
+    .input-container select {
+        font-size: 14px;
+        padding: 8px;}
+
+    button {
+        width: 80%;
+        font-size: 14px;
+        padding: 8px 16px;}}
+
+/*Responsive for larger than 760px screen*/
+@media (max-width: 820px) and (min-width: 760px) {
+    .transparent-box {
+        width: 90%; /* الصندوق يأخذ 90% من عرض الشاشة */
+        padding: 15px; /* زيادة الحشو قليلاً */
+        height: auto; }
+
+    .input-container {
+        gap: 10px;}
+
+    .input-container .half-width,
+    .input-container .full-width,
+    .input-container textarea,
+    .input-container select {
+        width: 44%; /* جميع العناصر تأخذ العرض الكامل */
+        padding: 10px; /* حشو مناسب */
+        font-size: 14px; /* تصغير حجم الخط */}
+
+    .input-container textarea {
+        min-height: 80px; /* ارتفاع مناسب لـ textarea */
+    }
+
+    button {
+        width: 100%; /* الزر يأخذ العرض الكامل */
+        margin-top: 15px; /* مسافة من الأعلى */
+        margin-bottom: 10px; /* مسافة من الأسفل */
+        padding: 10px; /* حشو مناسب */
+        font-size: 14px; /* تصغير حجم الخط */
+    }
+
+    .icon-container {
+        margin-top: 15px; /* مسافة من الأعلى */
+        gap: 8px; /* تقليل المسافة بين الأيقونات */
+    }
+
+    .icon {
+        width: 35px; /* تصغير حجم الأيقونات */
+        height: 35px;
+    }
+}
+
+/*Responsive for larger than 992px screen*/
+@media (max-width: 992px) {
+    .transparent-box {
+        width: 100%;
+        padding: 15px;
+        height: auto;
+    }
+
+    .input-container .half-width {
+        width: 48%;
+    }
+
+    button {
+        width: 60%;
+    }
+}
+
+/* Responsive for larger than 1200px screen */
+@media (max-width: 1200px)  {
+    .transparent-box {
+        width: 700px;
+    }
+    .input-container .half-width,
+    .input-container .full-width,
+    .input-container textarea,
+    .input-container select {
+        width: 44%; /* جميع العناصر تأخذ العرض الكامل */
+        padding: 10px; /* حشو مناسب */
+        font-size: 14px; /* تصغير حجم الخط */}
+
+}
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/Bookstyle.css">
+</head>
+<body>
+    <div class="background">
+        <div class="transparent-box">
+            <h1>Book Now</h1>
+            <div class="sample">
+                <div class="inner">
+                    <section>
+                        <form id="bookingForm" onsubmit="return validateEntry()">
+                            <div class="input-container">
+                                <input type="text" id="fullName" class="half-width" placeholder="Full Name" required>
+                                <input type="tel" id="phoneNumber" class="half-width" placeholder="Phone Number" required>
+                            </div>
+                            
+                            <div class="input-container">
+                                <input type="date" id="requiredDate" class="half-width" required>
+                                <input type="number" id="numPeople" class="half-width" placeholder="Number Of People" required>
+                            </div>
+                            
+                            <div class="input-container">
+                                <select id="packageType" class="half-width" required>
+                                    <option value="" disabled selected>Package Type</option>
+                                    <option value="corporate">Institutional Events</option>
+                                    <option value="long-stay">Long Stay</option>
+                                </select>
+                                <textarea id="specialReq" class="half-width" placeholder="Special Requirements" required></textarea>
+                            </div>
+                            
+                            <div class="input-container">
+                                <input type="text" id="stayDuration" class="half-width" placeholder="Duration Of Stay" required>
+                                <input type="text" id="budget" class="half-width" placeholder="Available Budget" required>
+                            </div>
+                            
+                            <div class="input-container">
+                                <input type="email" id="email" class="full-width" placeholder="E-Mail" required>
+                                <textarea id="additionalServices" class="full-row" placeholder="Additional Services" required></textarea>
+                            </div>
+                            
+                            <div class="button-container">
+                                <button type="submit" onclick="callme()">Send</button>
+                            </div>
+                        </form>
+
+
+                        <div class="icon-container">
+                            <div class="icon">
+                                <a href="mailto:holinone_resort@gmail.com">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </a>
+                            </div>
+                            <div class="icon">
+                                <a href="tel:+962777674733">
+                                    <i class="fa-solid fa-phone"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./assets/js/VIP.JS"></script>
+</body>
+</html>
